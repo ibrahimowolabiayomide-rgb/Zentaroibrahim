@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zentaro | Developer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Orbitron',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:black;
+color:white;
+overflow-x:hidden;
+}
+
+/* ===== NAVBAR ===== */
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+padding:15px;
+display:flex;
+justify-content:center;
+gap:40px;
+z-index:1000;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:0.9rem;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#00c3ff;
+}
+
+/* ===== SPACE BACKGROUND ===== */
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
+/* ===== HERO ===== */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding-top:80px;
+}
+
+.profile{
+width:160px;
+height:160px;
+border-radius:50%;
+border:4px solid #00c3ff;
+overflow:hidden;
+margin-bottom:20px;
+animation:float 4s ease-in-out infinite;
+}
+
+.profile img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+}
+
+.name{
+font-size:3rem;
+font-weight:900;
+background:linear-gradient(90deg,#00c3ff,#0066ff,#00c3ff);
+background-size:300%;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:glow 3s infinite linear;
+}
+
+@keyframes glow{
+0%{background-position:0%}
+100%{background-position:300%}
+}
+
+#typed{
+margin-top:15px;
+color:#00c3ff;
+}
+
+/* ===== SECTIONS ===== */
+section{
+padding:100px 20px;
+max-width:1200px;
+margin:auto;
+text-align:center;
+}
+
+h2{
+margin-bottom:40px;
+color:#00c3ff;
+}
+
+/* ===== SKILLS ===== */
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:50px;
+}
+
+.skill{
+padding:35px;
+background:rgba(0,123,255,0.1);
+border:1px solid rgba(0,123,255,0.4);
+border-radius:20px;
+cursor:pointer;
+transition:0.4s;
+}
+
+.skill:hover{
+transform:translateY(-10px);
+box-shadow:0 0 20px #008cff;
+}
+
+.skill img{
+width:90px;
+margin-bottom:20px;
+}
+
+.skill p{
+display:none;
+margin-top:15px;
+font-size:0.9rem;
+}
+
+.skill.active p{
+display:block;
+}
+
+/* ===== CONTACT ===== */
+.contact-icons a{
+margin:20px;
+font-size:2rem;
+color:white;
+transition:0.3s;
+}
+
+.contact-icons a:hover{
+color:#00c3ff;
+transform:scale(1.3);
+}
+</style>
+</head>
+<body>
+
+<canvas id="space"></canvas>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Let’s Talk</a>
+</nav>
+
+<section class="hero" id="home">
+<div class="profile">
+<img src="c:\Users\OWOLABI IBRAHIM\Pictures\AJAGBE.jpeg" alt="Profile Picture">
+</div>
+<div class="name">Owolabi Ibrahim ZenTaRO 🔥</div>
+<div id="typed"></div>
+</section>
+
+<section id="about">
+<h2>About Me</h2>
+<p>
+I am a futuristic web developer focused on building powerful, high-performance digital systems that combine creativity with strong technical execution. I specialize in modern frontend architecture, advanced animations, scalable web applications, and immersive interactive experiences that push the boundaries of design and functionality.
+
+With a deep understanding of HTML, CSS, and JavaScript, I craft clean, structured, and maintainable code that ensures both performance and scalability. I pay close attention to user experience, responsiveness, and accessibility, ensuring that every project works seamlessly across devices and platforms.
+
+I am passionate about transforming creative ideas into digital reality through logic-driven development and innovative design systems. My approach blends aesthetic precision with technical strength — creating products that are not only visually striking but also efficient, secure, and future-ready.
+
+I continuously improve my skills by exploring new technologies, frameworks, and development methodologies to stay ahead in the ever-evolving tech space. My mission is to build digital solutions that are impactful, scalable, and engineered for long-term growth..
+</p>
+</section>
+
+<section id="skills">
+<h2>Core Skills</h2>
+<div class="skills">
+
+<div class="skill" onclick="toggleSkill(this)">
+<img src="c:\Users\OWOLABI IBRAHIM\Pictures\WhatsApp Image 2026-03-03 at 5.22.35 AM.jpeg">
+<h3>HTML5</h3>
+<p>Semantic structure and SEO-optimized architecture.</p>
+</div>
+
+<div class="skill" onclick="toggleSkill(this)">
+<img src="c:\Users\OWOLABI IBRAHIM\Pictures\WhatsApp Image 2026-03-03 at 5.22.34 AM (1).jpeg">
+<h3>CSS3</h3>
+<p>Responsive layouts, Flexbox, Grid, animations.</p>
+</div>
+
+<div class="skill" onclick="toggleSkill(this)">
+<img src="c:\Users\OWOLABI IBRAHIM\Pictures\WhatsApp Image 2026-03-03 at 5.22.35 AM (1).jpeg">
+<h3>JavaScript</h3>
+<p>Interactive features and dynamic UI systems.</p>
+</div>
+
+<div class="skill" onclick="toggleSkill(this)">
+<img src="c:\Users\OWOLABI IBRAHIM\Pictures\WhatsApp Image 2026-03-03 at 5.22.36 AM.jpeg">
+<h3>React</h3>
+<p>Component-based scalable applications.</p>
+</div>
+
+<div class="skill" onclick="toggleSkill(this)">
+<img src="c:\Users\OWOLABI IBRAHIM\Pictures\WhatsApp Image 2026-03-03 at 5.22.36 AM (1).jpeg">
+<h3>Node.js</h3>
+<p>Backend logic and REST API creation.</p>
+</div>
+
+<div class="skill" onclick="toggleSkill(this)">
+<img src="c:\Users\OWOLABI IBRAHIM\Pictures\WhatsApp Image 2026-03-03 at 5.22.36 AM (2).jpeg">
+<h3>UI/UX</h3>
+<p>Designing intuitive and engaging interfaces.</p>
+</div>
+
+<div class="skill" onclick="toggleSkill(this)">
+<img src="c:\Users\OWOLABI IBRAHIM\Pictures\WhatsApp Image 2026-03-03 at 5.22.36 AM (3).jpeg">
+<h3>Git & GitHub</h3>
+<p>Version control and collaborative workflow.</p>
+</div>
+
+<div class="skill" onclick="toggleSkill(this)">
+<img src="c:\Users\OWOLABI IBRAHIM\Pictures\WhatsApp Image 2026-03-03 at 5.22.37 AM.jpeg">
+<h3>API Integration</h3>
+<p>Connecting frontend with external services.</p>
+</div>
+
+<div class="skill" onclick="toggleSkill(this)">
+<img src="c:\Users\OWOLABI IBRAHIM\Pictures\WhatsApp Image 2026-03-03 at 5.22.37 AM (1).jpeg">
+<h3>Databases</h3>
+<p>MongoDB and structured data management.</p>
+</div>
+
+<div class="skill" onclick="toggleSkill(this)">
+<img src="c:\Users\OWOLABI IBRAHIM\Pictures\WhatsApp Image 2026-03-03 at 5.22.37 AM (2).jpeg">
+<h3>Deployment</h3>
+<p>Hosting with Netlify, Vercel & server setup.</p>
+</div>
+
+</div>
+</section>
+
+<section id="contact">
+<h2>Let’s Talk</h2>
+<div class="contact-icons">
+<a href="mailto:yourgmail@gmail.com?subject=Project%20Inquiry&body=HI%20IBRAHIM,%20I%20will%20like%20to%20work%20with%20you%20on%20a%20project.">
+<i class="fa-solid fa-envelope"></i></a>
+
+<a href="https://wa.me/2348167653702?text=HI%20IBRAHIM,%20I%20will%20like%20to%20work%20with%20you%20on%20a%20project.">
+<i class="fa-brands fa-whatsapp"></i></a>
+
+<a href="https://twitter.com/messages/compose?text=HI%20IBRAHIM,%20I%20will%20like%20to%20work%20with%20you%20on%20a%20project.">
+<i class="fa-brands fa-x-twitter"></i></a>
+</div>
+</section>
+
+<script>
+const texts=["ZentaroCypheron 👾💻"];
+let i=0,j=0,deleting=false;
+const typed=document.getElementById("typed");
+
+function type(){
+let text=texts[i];
+if(!deleting){
+typed.textContent=text.substring(0,j++);
+if(j>text.length){deleting=true;setTimeout(type,1000);return;}
+}else{
+typed.textContent=text.substring(0,j--);
+if(j<0){deleting=false;}
+}
+setTimeout(type,100);
+}
+type();
+
+function toggleSkill(el){
+el.classList.toggle("active");
+}
+
+/* ===== REDUCED SPEED SPACE ===== */
+const canvas=document.getElementById("space");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let stars=[];
+for(let i=0;i<600;i++){
+stars.push({
+x:Math.random()*canvas.width - canvas.width/2,
+y:Math.random()*canvas.height - canvas.height/2,
+z:Math.random()*canvas.width
+});
+}
+
+function animate(){
+ctx.fillStyle="black";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+
+for(let star of stars){
+star.z-=3; // slower speed
+
+if(star.z<=0){
+star.z=canvas.width;
+}
+
+let k=128/star.z;
+let px=star.x*k + canvas.width/2;
+let py=star.y*k + canvas.height/2;
+
+ctx.fillStyle="#00c3ff";
+ctx.fillRect(px,py,2,2);
+}
+requestAnimationFrame(animate);
+}
+animate();
+</script>
+
+</body>
+</html>
